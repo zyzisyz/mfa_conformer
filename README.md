@@ -2,6 +2,8 @@
 
 This repository contains the training code accompanying the paper "MFA-Conformer: Multi-scale Feature Aggregation Conformer for Automatic Speaker Verification", which is submitted to Interspeech 2022.
 
+<p align="center"><img width="80%" src="docs/mfa_conformer.png" /></p>
+
 ## Installation
 
 Once you have created your Python environment (Python 3.8+), you can simply create the project and install its requirements:
