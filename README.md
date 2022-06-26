@@ -2,7 +2,7 @@
 
 This repository contains the training code accompanying the paper "MFA-Conformer: Multi-scale Feature Aggregation Conformer for Automatic Speaker Verification", which is submitted to Interspeech 2022.
 
-<p align="center"><img width="80%" src="docs/mfa_conformer.png" /></p>
+<p align="center"><img width="95%" src="docs/mfa_conformer.png" /></p>
 
 ## Installation
 
