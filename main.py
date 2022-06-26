@@ -37,8 +37,6 @@ class Task(LightningModule):
         self.mel_trans = Mel_Spectrogram()
 
         from module.resnet import resnet34, resnet18, resnet34_large
-        from module.res2net import res2net50
-        from module.se_resnet import se_resnet34_large
         from module.ecapa_tdnn import ecapa_tdnn, ecapa_tdnn_large
         from module.transformer_cat import transformer_cat
         from module.conformer import conformer
@@ -50,12 +48,6 @@ class Task(LightningModule):
 
         elif self.hparams.encoder_name == "resnet34":
             self.encoder = resnet34_large(embedding_dim=self.hparams.embedding_dim)
-
-        elif self.hparams.encoder_name == "res2net50":
-            self.encoder = res2net50(embedding_dim=self.hparams.embedding_dim)
-
-        elif self.hparams.encoder_name == "se_resnet34":
-            self.encoder = se_resnet34_large(embedding_dim=self.hparams.embedding_dim)
 
         elif self.hparams.encoder_name == "ecapa_tdnn":
             self.encoder = ecapa_tdnn(embedding_dim=self.hparams.embedding_dim)
@@ -161,7 +153,7 @@ class Task(LightningModule):
 
 
     def configure_optimizers(self):
-        optimizer = torch.optim.AdamW(
+        optimizer = torch.optim.Adam(
             self.parameters(),
             self.hparams.learning_rate,
             weight_decay=self.hparams.weight_decay

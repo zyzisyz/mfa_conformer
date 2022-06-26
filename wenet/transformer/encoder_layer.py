@@ -50,9 +50,6 @@ class TransformerEncoderLayer(nn.Module):
         self.size = size
         self.normalize_before = normalize_before
         self.concat_after = concat_after
-        # concat_linear may be not used in forward fuction,
-        # but will be saved in the *.pt
-        self.concat_linear = nn.Linear(size + size, size)
 
     def forward(
         self,
@@ -96,11 +93,7 @@ class TransformerEncoderLayer(nn.Module):
             residual = residual[:, -chunk:, :]
             mask = mask[:, -chunk:, :]
 
-        if self.concat_after:
-            x_concat = torch.cat((x, self.self_attn(x_q, x, x, mask)), dim=-1)
-            x = residual + self.concat_linear(x_concat)
-        else:
-            x = residual + self.dropout(self.self_attn(x_q, x, x, mask))
+        x = residual + self.dropout(self.self_attn(x_q, x, x, mask))
         if not self.normalize_before:
             x = self.norm1(x)
 
@@ -174,7 +167,6 @@ class ConformerEncoderLayer(nn.Module):
         self.size = size
         self.normalize_before = normalize_before
         self.concat_after = concat_after
-        self.concat_linear = nn.Linear(size + size, size)
 
     def forward(
         self,
@@ -229,11 +221,7 @@ class ConformerEncoderLayer(nn.Module):
             mask = mask[:, -chunk:, :]
 
         x_att = self.self_attn(x_q, x, x, mask, pos_emb)
-        if self.concat_after:
-            x_concat = torch.cat((x, x_att), dim=-1)
-            x = residual + self.concat_linear(x_concat)
-        else:
-            x = residual + self.dropout(x_att)
+        x = residual + self.dropout(x_att)
         if not self.normalize_before:
             x = self.norm_mha(x)
 
