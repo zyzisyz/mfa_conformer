@@ -28,4 +28,26 @@ python3 scripts/build_datalist.py \
         --data_list_path data/train.csv
 ```
 
+## Model Training
 
+```bash
+python3 main.py \
+        --batch_size 200 \
+        --num_workers 40 \
+        --max_epochs 30 \
+        --embedding_dim $embedding_dim \
+        --save_dir $save_dir \
+        --encoder_name $encoder_name \
+        --train_csv_path $train_csv_path \
+        --learning_rate 0.001 \
+        --encoder_name ${encoder_name} \
+        --num_classes $num_classes \
+        --trial_path $trial_path \
+        --loss_name $loss_name \
+        --num_blocks $num_blocks \
+        --step_size 4 \
+        --gamma 0.5 \
+        --weight_decay 0.0000001 \
+        --input_layer $input_layer \
+        --pos_enc_layer_type $pos_enc_layer_type 
+```
