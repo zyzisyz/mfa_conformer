@@ -9,8 +9,6 @@ from torch.utils.data import DataLoader
 from pl_bolts.datasets import UnlabeledImagenet
 from pl_bolts.utils.warnings import warn_missing_pkg
 
-from torchvision import transforms as transform_lib
-
 from .dataset import Evaluation_Dataset, Train_Dataset, Semi_Dataset
 
 

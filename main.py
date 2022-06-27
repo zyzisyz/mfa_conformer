@@ -236,7 +236,7 @@ def cli_main():
     AVAIL_GPUS = torch.cuda.device_count()
     trainer = Trainer(
             max_epochs=args.max_epochs,
-            strategy="ddp",
+            plugins=DDPPlugin(find_unused_parameters=False),
             gpus=AVAIL_GPUS,
             num_sanity_val_steps=-1,
             sync_batchnorm=True,
