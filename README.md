@@ -61,3 +61,15 @@ python3 main.py \
 The default configuration training results in Voxceleb1-test is prestent bellow:
 
 <p align="center"><img width="95%" src="docs/results.png" /></p>
+
+## Others
+
+Here are some tips might be useful:
+
+1. The Conformer block: We the borrow a lot of code from WeNet toolkit. 
+
+2. Average the checkpoint weights: When the model training is done, we average the parameters of the last 3~10 checkpoints to generate a new checkpoint. The new checkpoint always tends to achieve a better recognition performance.
+
+3. Warmup: We perform a linear warmup learning rate schedule at the first 2k training steps. And we find that this warmup procedure is very helpful for the model training.
+
+4. AS-norm: Adaptive score normalization (AS-norm) is common trick for speaker recognition. In our experiment, it will lead to 5%-10% relative improvement in EER metric.
