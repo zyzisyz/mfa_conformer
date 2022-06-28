@@ -58,6 +58,6 @@ python3 main.py \
 
 ### Results
 
-The default configuration training result is prestent bellow:
+The default configuration training results in Voxceleb1-test is prestent bellow:
 
 <p align="center"><img width="95%" src="docs/results.png" /></p>
