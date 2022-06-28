@@ -55,3 +55,9 @@ python3 main.py \
         --input_layer $input_layer \
         --pos_enc_layer_type $pos_enc_layer_type 
 ```
+
+### Results
+
+The default configuration training result is prestent bellow:
+
+<p align="center"><img width="95%" src="docs/docs/results.png" /></p>
