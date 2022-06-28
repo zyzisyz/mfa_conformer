@@ -16,6 +16,9 @@ pip3 install requirements.txt
 
 ## Data Preparation
 
+* [VoxCeleb 1&2](https://www.robots.ox.ac.uk/~vgg/data/voxceleb/)
+* [SITW](http://www.speech.sri.com/projects/sitw/)
+
 ```bash
 # format Voxceleb test trial list
 rm -rf data; mkdir data
