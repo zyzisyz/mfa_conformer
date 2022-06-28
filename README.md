@@ -56,7 +56,7 @@ python3 main.py \
         --pos_enc_layer_type $pos_enc_layer_type 
 ```
 
-### Results
+## Results
 
 The default configuration training results in Voxceleb1-test is prestent bellow:
 
