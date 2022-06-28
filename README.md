@@ -60,7 +60,7 @@ python3 main.py \
 
 The default configuration training results in Voxceleb1-test is prestent bellow:
 
-<p align="center"><img width="95%" src="docs/results.png" /></p>
+<p align="center"><img width="100%" src="docs/results.png" /></p>
 
 ## Others
 
