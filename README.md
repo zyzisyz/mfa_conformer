@@ -61,7 +61,7 @@ python3 main.py \
 
 ## Results
 
-The training results of default configuration is prestent below (Voxceleb1-test):
+The training results of default configuration is prestented below (Voxceleb1-test):
 
 <p align="center"><img width="100%" src="docs/results.png" /></p>
 
