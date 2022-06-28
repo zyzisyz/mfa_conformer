@@ -60,4 +60,4 @@ python3 main.py \
 
 The default configuration training result is prestent bellow:
 
-<p align="center"><img width="95%" src="docs/docs/results.png" /></p>
+<p align="center"><img width="95%" src="docs/results.png" /></p>
