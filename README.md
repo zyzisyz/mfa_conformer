@@ -65,3 +65,12 @@ What's more, here are some tips might be useful:
 2. **Average the checkpoint weights**: When the model training is done, we average the parameters of the last 3~10 checkpoints to generate a new checkpoint. The new checkpoint always tends to achieve a better recognition performance.
 3. **Warmup**: We perform a linear warmup learning rate schedule at the first 2k training steps. And we find that this warmup procedure is very helpful for the model training.
 4. **AS-norm**: Adaptive score normalization (AS-norm) is common trick for speaker recognition. In our experiment, it will lead to 5%-10% relative improvement in EER metric.
+
+```
+@article{zhang2022mfa,
+  title={MFA-Conformer: Multi-scale Feature Aggregation Conformer for Automatic Speaker Verification},
+  author={Zhang, Yang and Lv, Zhiqiang and Wu, Haibin and Zhang, Shanshan and Hu, Pengfei and Wu, Zhiyong and Lee, Hung-yi and Meng, Helen},
+  journal={arXiv preprint arXiv:2203.15249},
+  year={2022}
+}
+```
