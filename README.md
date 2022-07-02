@@ -6,15 +6,10 @@ This repository contains the training code accompanying the paper "MFA-Conformer
 
 The architecture of the MFA-Conformer is inspired by recent stateof-the-art models in speech recognition and speaker verification. Firstly, we introduce a convolution subsampling layer to decrease the computational cost of the model. Secondly, we adopt Conformer blocks which combine Transformers and convolution neural networks (CNNs) to capture global and local features effectively. Finally, the output feature maps from all Conformer blocks are concatenated to aggregate multi-scale representations before final pooling. The best system obtains 0.64%, 1.29% and 1.63% EER on VoxCeleb1-O, SITW.Dev, and SITW.Eval set, respectively. 
 
-## Installation
-
-Once you have created your Python environment (Python 3.8+), you can simply create the project and install its requirements:
-
-```bash
-pip3 install requirements.txt
-```
-
 ## Data Preparation
+
+* [VoxCeleb 1&2](https://www.robots.ox.ac.uk/~vgg/data/voxceleb/)
+* [SITW](http://www.speech.sri.com/projects/sitw/)
 
 ```bash
 # format Voxceleb test trial list
@@ -58,15 +53,24 @@ python3 main.py \
 
 ## Results
 
-The default configuration training results in Voxceleb1-test is prestent bellow:
+The training results of default configuration is prestented below (Voxceleb1-test):
 
 <p align="center"><img width="100%" src="docs/results.png" /></p>
 
 ## Others
 
-Here are some tips might be useful:
+What's more, here are some tips might be useful:
 
-1. The Conformer block: We the borrow a lot of code from WeNet toolkit. 
-2. Average the checkpoint weights: When the model training is done, we average the parameters of the last 3~10 checkpoints to generate a new checkpoint. The new checkpoint always tends to achieve a better recognition performance.
-3. Warmup: We perform a linear warmup learning rate schedule at the first 2k training steps. And we find that this warmup procedure is very helpful for the model training.
-4. AS-norm: Adaptive score normalization (AS-norm) is common trick for speaker recognition. In our experiment, it will lead to 5%-10% relative improvement in EER metric.
+1. **The Conformer block**: We the borrow a lot of code from [WeNet](https://github.com/wenet-e2e/wenet) toolkit. 
+2. **Average the checkpoint weights**: When the model training is done, we average the parameters of the last 3~10 checkpoints to generate a new checkpoint. The new checkpoint always tends to achieve a better recognition performance.
+3. **Warmup**: We perform a linear warmup learning rate schedule at the first 2k training steps. And we find that this warmup procedure is very helpful for the model training.
+4. **AS-norm**: Adaptive score normalization (AS-norm) is common trick for speaker recognition. In our experiment, it will lead to 5%-10% relative improvement in EER metric.
+
+```
+@article{zhang2022mfa,
+  title={MFA-Conformer: Multi-scale Feature Aggregation Conformer for Automatic Speaker Verification},
+  author={Zhang, Yang and Lv, Zhiqiang and Wu, Haibin and Zhang, Shanshan and Hu, Pengfei and Wu, Zhiyong and Lee, Hung-yi and Meng, Helen},
+  journal={arXiv preprint arXiv:2203.15249},
+  year={2022}
+}
+```
