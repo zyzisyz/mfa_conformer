@@ -28,7 +28,7 @@ class softmax(nn.Module):
 
 if __name__ == "__main__":
     model = softmax(10, 100)
-    data = torch.randn((2, 1, 10))
+    data = torch.randn((2, 10))
     label = torch.tensor([0, 1])
     loss, acc = model(data, label)
 
