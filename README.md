@@ -66,12 +66,11 @@ What's more, here are some tips might be useful:
 3. **Warmup**: We perform a linear warmup learning rate schedule at the first 2k training steps. And we find that this warmup procedure is very helpful for the model training.
 4. **AS-norm**: Adaptive score normalization (AS-norm) is common trick for speaker recognition. In our experiment, it will lead to 5%-10% relative improvement in EER metric.
 
-```
-
 ## Citation
 
 If you find this code useful for your research, please cite our paper.
 
+```
 @article{zhang2022mfa,
   title={MFA-Conformer: Multi-scale Feature Aggregation Conformer for Automatic Speaker Verification},
   author={Zhang, Yang and Lv, Zhiqiang and Wu, Haibin and Zhang, Shanshan and Hu, Pengfei and Wu, Zhiyong and Lee, Hung-yi and Meng, Helen},
